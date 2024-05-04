@@ -1,0 +1,8 @@
+lib: [
+  "_build/install/default/lib/cryptohacks/META"
+  "_build/install/default/lib/cryptohacks/dune-package"
+  "_build/install/default/lib/cryptohacks/opam"
+]
+bin: [
+  "_build/install/default/bin/cryptohacks"
+]

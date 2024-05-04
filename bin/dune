@@ -1,0 +1,4 @@
+(executable
+ (public_name cryptohacks)
+ (name main)
+ (libraries cryptohacks hex))

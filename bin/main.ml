@@ -25,3 +25,11 @@ let () =
   let result = Cryptohacks.Challenge4.decode_base10 long_integer in
   print_endline result
 
+(* xor intro *)
+
+let () =
+  let message = "label" in  
+  let result = Cryptohacks.Challenge5.xor_string_with_13 message in
+  print_endline result
+
+

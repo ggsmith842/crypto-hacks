@@ -1,4 +1,7 @@
 
+(* Int to ASCII *)
+
+
 
 (* Hex *)
 let () = print_endline "Challenge 2: Decode hex to bytes:"
@@ -16,4 +19,9 @@ let() =
 
 (* Bytes and Big Integers *)
 
+let () = 
+  
+  let long_integer = 310400273487 in
+  let result = Cryptohacks.Challenge4.decode_base10 long_integer in
+  print_endline result
 

@@ -1,6 +1,6 @@
-(* ASCII is a 7-bit encoding standard which allows the representation of text using the integers 0-127.
+(* ASCII is a 7-bit encoding standard which allows the representation of text using the integers 0-127. *)
 
-Using the below integer array; convert the numbers to their corresponding ASCII characters to obtain a flag. *)
+(* Using the below integer array; convert the numbers to their corresponding ASCII characters to obtain a flag. *)
 
 let _ = print_endline "Convert to ascii\n"
 

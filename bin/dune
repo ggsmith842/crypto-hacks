@@ -1,4 +1,4 @@
 (executable
  (public_name cryptohacks)
  (name main)
- (libraries cryptohacks hex))
+ (libraries cryptohacks hex zarith))

@@ -30,6 +30,5 @@ let rec convert_to_ascii n acc =
     convert_to_ascii (Z.div n (Z.of_int 256)) (acii_char ^ acc))
 ;;
 
-let flag = convert_to_ascii int_flag "";;
-
-print_endline flag
+(* let flag = convert_to_ascii int_flag "";;
+print_endline flag *)

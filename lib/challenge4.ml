@@ -15,4 +15,3 @@ let decode_base10 message =
   in
   decoded_message
 ;;
-

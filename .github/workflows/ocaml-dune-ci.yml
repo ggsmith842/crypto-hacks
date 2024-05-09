@@ -12,11 +12,8 @@ jobs:
 
       - name: Install OPAM
         run: |
-          sudo apt upgrade -y
           sudo apt install opam
           
-          
-
       - name: Install OCaml
         run: |
           opam init --bare -a -y
@@ -25,7 +22,9 @@ jobs:
           eval $(opam env)
 
       - name: Install Dune
-        run: opam install -y odoc ounit2 qcheck bisect_ppx menhir ocaml-lsp-server ocamlformat --switch=gitaction
+        run: |
+          opam install -y qcheck ocamlformat --switch=gitaction
+          eval $(opam env)
 
       - name: Run Dune Format
         run: dune fmt --auto-promote

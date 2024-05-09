@@ -23,8 +23,8 @@ jobs:
 
       - name: Install Dune
         run: |
-          opam install -y qcheck ocamlformat --switch=gitaction
+          opam install -y qcheck ocamlformat dune --switch=gitaction
           eval $(opam env)
 
       - name: Run Dune Format
-        run: opam exec -- dune fmt --auto-promote
+        run: dune fmt 

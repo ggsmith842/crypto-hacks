@@ -29,4 +29,4 @@ jobs:
           which dune
 
       - name: Run Dune Format
-        run: dune fmt 
+        run: /home/runner/.opam/gitaction/bin/dune fmt 

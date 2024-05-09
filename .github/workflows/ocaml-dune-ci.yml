@@ -27,4 +27,4 @@ jobs:
           eval $(opam env)
 
       - name: Run Dune Format
-        run: dune fmt --auto-promote
+        run: opam exec -- dune fmt --auto-promote

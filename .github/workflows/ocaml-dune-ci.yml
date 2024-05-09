@@ -18,7 +18,6 @@ jobs:
       - name: Install OCaml
         run: |
           opam init --bare -a -y
-          opam switch create 5.1 --repos=default
           eval $(opam env)
 
       - name: Install Dune

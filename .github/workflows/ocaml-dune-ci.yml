@@ -26,7 +26,7 @@ jobs:
         run: |
           opam install -y qcheck ocamlformat --switch=gitaction
           eval $(opam env)
-          which dune
+          opam list
 
       - name: Run Dune Format
         run: /home/runner/.opam/gitaction/bin/dune fmt 

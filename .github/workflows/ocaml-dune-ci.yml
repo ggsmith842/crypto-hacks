@@ -12,13 +12,15 @@ jobs:
 
       - name: Install OPAM
         run: |
+          sudo apt upgrade -y
           sudo apt install opam
-          opam update
+          
           
 
       - name: Install OCaml
         run: |
           opam init --bare -a -y
+          opam update
           opam switch create gitaction ocaml-base-compiler.5.1.1
           eval $(opam env)
 

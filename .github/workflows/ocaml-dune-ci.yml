@@ -16,6 +16,9 @@ jobs:
           ocaml-compiler: "5.1"
 
       - name: Install dependencies
+        run: opam install . --deps-only --with-test
+        
+      - name: Dune build
         run: opam exec -- dune build @install
 
       - name: Format code

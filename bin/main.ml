@@ -52,3 +52,14 @@ let () =
 ;;
 
 (* Singel Byte xor Challenge *)
+print_endline "\nChallenge 7: Single Byte Xor"
+
+let () =
+  let key_str = "73626960647f6b206821204f21254f7d694f7624662065622127234f726927756d" in
+  Cryptohacks.Challenge7.xor_single_byte_decryption key_str
+;;
+
+let () =
+  let int_rep = int_of_string "0x10" in
+  Printf.printf "Bonus: The 0x10 integer value is %d.\n" int_rep
+;;

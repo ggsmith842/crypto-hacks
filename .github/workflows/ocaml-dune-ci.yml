@@ -1,0 +1,22 @@
+name: Dune Format
+
+on: 
+  push:
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Ocaml and Dune
+        uses: avsm/setup-ocaml@v2
+        with:
+          ocaml-version: 5
+
+      - name: Install dependencies
+        run: dune build @install
+
+      - name: Format code
+        run: dune build @fmt --auto-promote

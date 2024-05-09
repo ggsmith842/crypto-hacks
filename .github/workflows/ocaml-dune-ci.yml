@@ -1,26 +1,31 @@
-name: Dune Format
+name: Format code
 
-on: 
+on:
   push:
+    branches:
+      - main
 
 jobs:
   format:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Install Ocaml and Dune
-        uses: avsm/setup-ocaml@v2
-        with:
-          ocaml-compiler: "5.1"
-          dune-version: "3.15.2"
+      - name: Install opam
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget ca-certificates
+          wget https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh
+          sh install.sh -y
+          eval $(opam config env)
 
-      # - name: Install dependencies
-      #   run: opam install . --deps-only --with-test
-        
-      - name: Dune build
-        run: opam exec -- dune build @install
+      - name: Install OCaml
+        run: opam switch create 4.13.1
+
+      - name: Install Dune
+        run: opam install dune
 
       - name: Format code
-        run: opam exec -- dune build @fmt --auto-promote
+        run: dune build @fmt --auto-promote

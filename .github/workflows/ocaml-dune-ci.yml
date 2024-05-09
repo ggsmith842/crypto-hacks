@@ -14,9 +14,10 @@ jobs:
         uses: avsm/setup-ocaml@v2
         with:
           ocaml-compiler: "5.1"
+          dune-version: "3.15.2"
 
-      - name: Install dependencies
-        run: opam install . --deps-only --with-test
+      # - name: Install dependencies
+      #   run: opam install . --deps-only --with-test
         
       - name: Dune build
         run: opam exec -- dune build @install

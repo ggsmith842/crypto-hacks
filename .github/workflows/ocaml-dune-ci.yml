@@ -16,7 +16,7 @@ jobs:
           ocaml-compiler: "5.1"
 
       - name: Install dependencies
-        run: dune build @install
+        run: opam exec -- dune build @install
 
       - name: Format code
-        run: dune build @fmt --auto-promote
+        run: opam exec -- dune build @fmt --auto-promote

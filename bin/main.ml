@@ -29,14 +29,6 @@ let () =
     Z.of_string
       "11515195063862318899931685488813747395775516287289682636499965282714637259206269"
   in
-  (* let long_integer = 310400273487 in *)
-  let result = Cryptohacks.Challenge4.decode_base10 long_integer in
-  print_endline result
-  let long_integer =
-    Z.of_string
-      "11515195063862318899931685488813747395775516287289682636499965282714637259206269"
-  in
-  (* let long_integer = 310400273487 in *)
   let result = Cryptohacks.Challenge4.decode_base10 long_integer in
   print_endline result
 ;;
@@ -53,10 +45,10 @@ let () =
 (* xor properties *)
 print_endline "\nChallenge 6: Xor Properties"
 
-let () = 
- let decoded_flag =  Cryptohacks.Challenge6.int_flag in
-let flag =  Cryptohacks.Challenge6.convert_to_ascii decoded_flag "" in
-print_endline flag 
-
+let () =
+  let decoded_flag = Cryptohacks.Challenge6.int_flag in
+  let flag = Cryptohacks.Challenge6.convert_to_ascii decoded_flag "" in
+  print_endline flag
 ;;
 
+(* Singel Byte xor Challenge *)

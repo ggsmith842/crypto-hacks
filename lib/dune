@@ -1,3 +1,3 @@
 (library
  (name cryptohacks)
- (libraries hex base64 zarith))
+ (libraries hex base64 zarith str))

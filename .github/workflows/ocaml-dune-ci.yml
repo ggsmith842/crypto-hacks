@@ -20,11 +20,13 @@ jobs:
           opam update
           opam switch create gitaction ocaml-base-compiler.5.1.1
           eval $(opam env)
+          opam switch list
 
       - name: Install Dune
         run: |
-          opam install -y qcheck ocamlformat dune --switch=gitaction
+          opam install -y qcheck ocamlformat --switch=gitaction
           eval $(opam env)
+          which dune
 
       - name: Run Dune Format
         run: dune fmt 

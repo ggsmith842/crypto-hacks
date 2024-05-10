@@ -26,7 +26,8 @@ jobs:
       - name: Install Dune
         run: |
           opam install -y ocamlformat 
-          eval $(opam env)
+          eval $(opam env --switch=gitaction)
+          which ocamlformat
           
 
       - name: Run Dune Format

@@ -1,35 +1,26 @@
-name: Dune Format
+name: Format OCaml Code
 
 on:
   push:
+    branches: [ main ]
 
 jobs:
   format:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Adjust OS as needed
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      - name: Install OPAM
-        run: |
-          sudo apt install opam
-          
-      - name: Install OCaml
-        run: |
-          opam init --bare -a -y
-          opam update
-          opam switch create gitaction ocaml-base-compiler.5.1.1
-          eval $(opam env --switch=gitaction )
-          eval $(opam env --set-root)
-          
+      - name: Install opam
+        uses: ocaml/opam@v2  # Replace v2 with desired opam version
 
-      - name: Install Dune
-        run: |
-          opam install -y ocamlformat 
-          eval $(opam env --switch=gitaction)
-          which ocamlformat
-          
+      - name: Install ocamlformat
+        run: opam install ocamlformat
 
-      - name: Run Dune Format
+      - name: Set environment variables (optional)
+        # Uncomment if opam env vars are not set automatically
         run: |
-          /home/runner/.opam/gitaction/bin/dune fmt 
+          echo 'export OPAMROOT=$HOME/.opam' >> $GITHUB_ENV  # Adjust path if needed
+          echo 'export PATH=$OPAMROOT/bin:$PATH' >> $GITHUB_ENV
+
+      - name: Format code
+        run: dune fmt

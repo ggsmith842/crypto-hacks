@@ -8,14 +8,12 @@ jobs:
   lint-fmt:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout tree
-        uses: actions/checkout@v4
-
-      - name: Set-up OCaml 5.1
-        uses: ocaml/setup-ocaml@v2
+      - name: Setup dune
+        uses: nmittu/setup-dune@v2
         with:
-          ocaml-compiler: "5.1"
-          dune-cache: true
-
-      - name: Lint fmt
-        uses: ocaml/setup-ocaml/lint-fmt@v2
+          packages: "ocamlformat"
+          compiler: "4.12.0"
+      - name: build
+        run: |
+          eval $(opam config env)
+          dune fmt

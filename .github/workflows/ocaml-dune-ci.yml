@@ -19,12 +19,12 @@ jobs:
           opam init --bare -a -y
           opam update
           opam switch create gitaction ocaml-base-compiler.5.1.1
-          eval $(opam env --set-switch=gitaction --set-root)
-          opam switch list
+          eval $(opam env --switch=gitaction --set-root)
+          
 
       - name: Install Dune
         run: |
-          opam install ocamlformat 
+          opam install -y ocamlformat 
           eval $(opam env)
           
 

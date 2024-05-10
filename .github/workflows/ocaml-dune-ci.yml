@@ -5,22 +5,17 @@ on:
     branches: [ main ]
 
 jobs:
-  format:
-    runs-on: ubuntu-latest  # Adjust OS as needed
+  lint-fmt:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout tree
+        uses: actions/checkout@v4
 
-      - name: Install opam
-        uses: ocaml/opam@v2  # Replace v2 with desired opam version
+      - name: Set-up OCaml 5.1
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: "5.1"
+          dune-cache: true
 
-      - name: Install ocamlformat
-        run: opam install ocamlformat
-
-      - name: Set environment variables (optional)
-        # Uncomment if opam env vars are not set automatically
-        run: |
-          echo 'export OPAMROOT=$HOME/.opam' >> $GITHUB_ENV  # Adjust path if needed
-          echo 'export PATH=$OPAMROOT/bin:$PATH' >> $GITHUB_ENV
-
-      - name: Format code
-        run: dune fmt
+      - name: Lint fmt
+        uses: ocaml/setup-ocaml/lint-fmt@v2

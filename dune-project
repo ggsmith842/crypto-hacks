@@ -5,11 +5,11 @@
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github ggsmith842/crypto-hacks))
 
-(authors "Author Name")
+(authors "Grant Smith")
 
-(maintainers "Maintainer Name")
+(maintainers "ggsmith842")
 
 (license LICENSE)
 

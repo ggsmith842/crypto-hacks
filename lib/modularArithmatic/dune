@@ -1,0 +1,3 @@
+(library
+ (name modularArithmatic)
+ (libraries hex base64 zarith str))

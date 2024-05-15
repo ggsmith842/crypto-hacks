@@ -63,3 +63,14 @@ let () =
   let int_rep = int_of_string "0x10" in
   Printf.printf "Bonus: The 0x10 integer value is %d.\n" int_rep
 ;;
+
+(* Secret Xor Key - Flag Pattern *)
+print_endline "\nChallenge 8: Secret Xor Key"
+
+let () =
+  let flag =
+    Cryptohacks.Challenge8.get_secret_message
+      "0e0b213f26041e480b26217f27342e175d0e070a3c5b103e2526217f27342e175d0e077e263451150104"
+  in
+  print_endline flag
+;;

@@ -56,4 +56,4 @@ let xor_single_byte_decryption key =
   let flag_idx = find_flag_pattern decoded_strings in
   let flag = decoded_strings.(Option.get flag_idx) in
   print_endline flag
-
+;;

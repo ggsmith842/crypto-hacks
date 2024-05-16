@@ -2,6 +2,12 @@
 ## A free, fun platform for learning modern cryptography
 ### Solutions for Various Challenges implemented in Ocaml
 
+<p align="center">
+  <img src="https://github.com/ggsmith842/crypto-hacks/blob/main/static/Ocaml_Cryptography.png?raw=true" alt="Crypto Camel">
+</p>
+
+
+
 https://cryptohack.org/
 
 The lib folder contains my solutions to the Introduction to Cryptohacks course and some of the Modular Arithmatic lessons. I won't include any challenges outside of those "starter problems so as not to spoil the challenge for anyone else. 

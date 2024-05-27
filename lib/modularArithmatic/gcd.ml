@@ -13,7 +13,7 @@ let rec gcd_ext a b =
   then b, 0, 1
   else (
     let g, x1, y1 = gcd_ext (b mod a) a in
-    let x = y1 - (b / a) * x1 in
+    let x = y1 - (b / a * x1) in
     let y = x1 in
     g, x, y)
 ;;

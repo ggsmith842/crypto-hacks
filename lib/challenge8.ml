@@ -35,7 +35,6 @@ let flag =
   String.concat "" (Array.to_list string_flag)
 ;;
 
-
 (* combine code into function *)
 let get_secret_message key =
   let key = Challenge2.decode_hex_string key in

@@ -19,6 +19,15 @@ I definitely think Python is better suited for cryptography and there are alot o
 Ocaml's syntax really grew on me as I wrote more code and I find it has more of a flow than Python so I encourage anyone who is interested to give Ocaml a try and see if you can solve some Cryptography puzzles with it! Happy coding!
 
 
+## Useful References & Notes
+
+### Quadratic Residues
+[Modular Square Root Examples](https://www.rieselprime.de/ziki/Modular_square_root)
+
+In modular arithmetic the negative of a number, a mod n can be found as:
+ $$−a≡n−a(mod \ n)$$
+
+
 ## Modules Used:
 1. Str - https://ocaml.org/manual/5.1/api/Str.html
 2. Zarith

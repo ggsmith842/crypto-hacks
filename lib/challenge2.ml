@@ -14,3 +14,9 @@ let decode_hex_string hex_string =
   let decoded_string = Cstruct.to_string byte_string in
   decoded_string
 ;;
+
+let encode_to_hex message =
+  let byte_message = Cstruct.of_string message in
+  let encoded_hex_str = Hex.of_cstruct byte_message in
+  encoded_hex_str
+;;
